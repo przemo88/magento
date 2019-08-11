@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <virtua translate="label" module="virtua_delivery">
+            <label>Expected Delivery</label>
+            <sort_order>100</sort_order>
+        </virtua>
+    </tabs>
+    <sections>
+        <virtua_delivery translate="label" module="virtua_delivery">
+            <label> Options</label>
+            <tab>virtua</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <groups>
+                <virtua_group translate="label" module="virtua_delivery">
+                    <label>My Extension Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+
+                        <virtua_select translate="label">
+                            <label>Dni tygodnia: </label>
+                            <comment>Zaznacz dni w które nie ma dostawy</comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>virtua_delivery/options</source_model>
+                        </virtua_select>
+                    </fields>
+                </virtua_group>
+            </groups>
+        </virtua_delivery>
+    </sections>
+</config>

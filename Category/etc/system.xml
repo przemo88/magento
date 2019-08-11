@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+<tabs>
+    <category translate="label" module="virtua_category">
+        <label>Landing Page - Redirect</label>
+        <sort_order>100</sort_order>
+    </category>
+</tabs>
+<sections>
+<virtua_category translate="label" module="virtua_category">
+    <label>Landing Page</label>
+    <tab>category</tab>
+    <sort_order>1000</sort_order>
+    <show_in_default>1</show_in_default>
+    <show_in_website>1</show_in_website>
+    <show_in_store>1</show_in_store>
+
+    <groups>
+        <category_title translate="label" module="virtua_category">
+            <label>Choose Landing Page</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <fields>
+
+                <category_select translate="label">
+                    <label>Landing Page </label>
+                    <frontend_type>select</frontend_type>
+                    <sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <source_model>virtua_category/LandingPage</source_model>
+                </category_select>
+            </fields>
+        </category_title>
+    </groups>
+
+</virtua_category>
+</sections>
+</config>

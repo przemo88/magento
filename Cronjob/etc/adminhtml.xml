@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <config>
+    <menu>
+        <virtua_cronjob_report translate="title" module="virtua_cronjob">
+            <title>Import Email</title>
+            <action>adminhtml/email/index</action>
+            <sort_order>91</sort_order>
+        </virtua_cronjob_report>
+
+    </menu>
+</config>

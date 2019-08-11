@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+        <config>
+    <menu>
+        <virtua_product_menu translate="title" module="virtua_product">
+            <title>Availability</title>
+            <sort_order>100</sort_order>
+            <action>adminhtml/avalability/index</action>
+        </virtua_product_menu>
+    </menu>
+</config>

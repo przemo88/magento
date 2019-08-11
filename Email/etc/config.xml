@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Virtua_Email>
+            <version>3.1.5.6</version>
+        </Virtua_Email>
+    </modules>
+    <global>
+        <blocks>
+            <virtua_email>
+                <class>Virtua_Email_Block</class>
+            </virtua_email>
+        </blocks>
+        <helpers>
+            <virtua_email>
+                <class>Virtua_Email_Helper</class>
+            </virtua_email>
+        </helpers>
+        <models>
+            <virtua_email>
+                <class>Virtua_Email_Model</class>
+            </virtua_email>
+
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <sales_order_grid_collection_load_before>
+                <observers>
+                    <virtua_email>
+                        <model>virtua_email/observer</model>
+                        <method>showEmail</method>
+                    </virtua_email>
+                </observers>
+            </sales_order_grid_collection_load_before>
+        </events>
+        <layout>
+            <updates>
+                <virtua_email>
+                    <file>email.xml</file>
+                </virtua_email>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

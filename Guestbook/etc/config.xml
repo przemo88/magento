@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Virtua_Guestbook>
+            <version>3.2.0.1</version>
+        </Virtua_Guestbook>
+    </modules>
+
+    <frontend>
+        <routers>
+            <Virtua_Guestbook>
+                <use>standard</use>
+                <args>
+                    <module>Virtua_Guestbook</module>
+                    <frontName>guestbook</frontName>
+                </args>
+            </Virtua_Guestbook>
+        </routers>
+        <layout>
+            <updates>
+                <virtua_guestbook>
+                    <file>guestbook.xml</file>
+                </virtua_guestbook>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <blocks>
+            <virtua_guestbook_adminhtml>
+                <class>Virtua_Guestbook_Block_Adminhtml</class>
+            </virtua_guestbook_adminhtml>
+            <virtua_guestbook>
+                <class>Virtua_Guestbook_Block</class>
+            </virtua_guestbook>
+        </blocks>
+        <helpers>
+            <virtua_guestbook>
+                <class>Virtua_Guestbook_Helper</class>
+            </virtua_guestbook>
+        </helpers>
+        <models>
+            <virtua_guestbook>
+                <class>Virtua_Guestbook_Model</class>
+                <resourceModel>virtua_guestbook_resource</resourceModel>
+            </virtua_guestbook>
+            <virtua_guestbook_resource>
+                <class>Virtua_Guestbook_Model_Resource</class>
+                <entities>
+                    <guestbook>
+                        <table>guestbook</table>
+                    </guestbook>
+                </entities>
+            </virtua_guestbook_resource>
+        </models>
+        <resources>
+            <guestbook_setup>
+                <setup>
+                    <module>Virtua_Guestbook</module>
+                </setup>
+            </guestbook_setup>
+        </resources>
+    </global>
+
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <virtua_guestbook before="Mage_Adminhtml">Virtua_Guestbook_Adminhtml</virtua_guestbook>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

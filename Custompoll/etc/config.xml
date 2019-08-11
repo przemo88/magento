@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Virtua_Custompoll>
+            <version>3.1.5.6</version>
+        </Virtua_Custompoll>
+    </modules>
+
+    <frontend>
+        <routers>
+            <virtua_custompoll>
+                <use>standard</use>
+                <args>
+                    <module>Virtua_Custompoll</module>
+                    <frontName>custompoll</frontName>
+                </args>
+            </virtua_custompoll>
+        </routers>
+        <layout>
+            <updates>
+                <virtua_custompoll>
+                    <file>custompoll.xml</file>
+                </virtua_custompoll>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <blocks>
+            <virtua_custompoll>
+                <class>Virtua_Custompoll_Block</class>
+            </virtua_custompoll>
+        </blocks>
+        <models>
+            <virtua_custompoll>
+                <class>Virtua_Custompoll_Model</class>
+                <resourceModel>virtua_custompoll_resource</resourceModel>
+            </virtua_custompoll>
+            <virtua_custompoll_resource>
+                <class>Virtua_Custompoll_Model_Resource</class>
+                <entities>
+                    <custompoll>
+                        <table>custompoll</table>
+                    </custompoll>
+                </entities>
+            </virtua_custompoll_resource>
+        </models>
+        <resources>
+        <custompoll_setup>
+            <setup>
+                <module>Virtua_Custompoll</module>
+            </setup>
+        </custompoll_setup>
+        </resources>
+    </global>
+</config>

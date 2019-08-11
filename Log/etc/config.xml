@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+        <config>
+
+    <modules>
+        <Virtua_Log>
+            <version>0.1.0</version>
+        </Virtua_Log>
+    </modules>
+
+    <global>
+        <helpers>
+            <virtua_log>
+                <class>Virtua_Log_Helper</class>
+            </virtua_log>
+        </helpers>
+
+        <models>
+            <virtua_log>
+                <class>Virtua_Log_Model</class>
+            </virtua_log>
+        </models>
+    </global>
+
+    <crontab>
+        <jobs>
+            <virtua_log>
+                <schedule><cron_expr>*/1 * * * *</cron_expr></schedule>
+                <run><model>virtua_log/log::create</model></run>
+            </virtua_log>
+        </jobs>
+    </crontab>
+
+</config>

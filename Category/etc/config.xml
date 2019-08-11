@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Virtua_Category>
+            <version>3.1.5.6</version>
+        </Virtua_Category>
+    </modules>
+
+    <global>
+        <blocks>
+            <virtua_category>
+                <class>Virtua_Category_Block</class>
+            </virtua_category>
+        </blocks>
+        <models>
+            <virtua_category>
+                <class>Virtua_Category_Model</class>
+                <resourceModel>virtua_category_resource</resourceModel>
+            </virtua_category>
+
+            <virtua_category_resource>
+                <class>Virtua_Category_Model_Resource</class>
+                <entities>
+                    <category>
+                        <table>catalog_category_entity_varchar</table>
+                    </category>
+                </entities>
+            </virtua_category_resource>
+
+        </models>
+        <helpers>
+            <virtua_category>
+                <class>Virtua_Category_Helper</class>
+            </virtua_category>
+        </helpers>
+
+
+
+        <resources>
+            <virtua_category_attribute>
+                <setup>
+                    <module>Virtua_Category</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </virtua_category_attribute>
+            <add_category_attribute_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </add_category_attribute_write>
+            <add_category_attribute_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </add_category_attribute_read>
+        </resources>
+
+
+    </global>
+
+    <frontend>
+
+        <events>
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <catalog_add_topmenu_items>
+                        <class>virtua_category/observer</class>
+                        <method>createMenu</method>
+                    </catalog_add_topmenu_items>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+
+
+        <core_block_abstract_to_html_before>
+            <observers>
+                <virtua_category>
+                    <type>singleton</type>
+                    <class>Virtua_Category_Model_Observer</class>
+                    <method>beforeLoad</method>
+                </virtua_category>
+            </observers>
+        </core_block_abstract_to_html_before>
+        </events>
+        <routers>
+            <Virtua_Category>
+                <use>standard</use>
+                <args>
+                    <module>Virtua_Category</module>
+                    <frontName>category</frontName>
+                </args>
+            </Virtua_Category>
+        </routers>
+
+
+
+        <layout>
+            <updates>
+                <virtua_category>
+                    <file>category.xml</file>
+                </virtua_category>
+            </updates>
+        </layout>
+
+    </frontend>
+
+
+
+</config>

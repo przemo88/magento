@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Virtua_Product>
+            <version>3.1.5.6</version>
+        </Virtua_Product>
+    </modules>
+
+    <global>
+        <helpers>
+            <virtua_product>
+                <class>Virtua_Product_Helper</class>
+            </virtua_product>
+        </helpers>
+        <blocks>
+            <virtua_product_adminhtml>
+                <class>Virtua_Product_Block_Adminhtml</class>
+            </virtua_product_adminhtml>
+            <virtua_product>
+                <class>Virtua_Product_Block</class>
+            </virtua_product>
+        </blocks>
+        <models>
+            <virtua_product>
+                <class>Virtua_Product_Model</class>
+                <resourceModel>virtua_product_resource</resourceModel>
+            </virtua_product>
+            <virtua_product_resource>
+                <class>Virtua_Product_Model_Resource</class>
+                <entities>
+                    <product>
+                        <table>availability</table>
+                    </product>
+                </entities>
+            </virtua_product_resource>
+        </models>
+        <resources>
+            <virtua_product>
+                <setup>
+                    <module>Virtua_Product</module>
+                </setup>
+            </virtua_product>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <virtua_product before="Mage_Adminhtml">Virtua_Product_Adminhtml</virtua_product>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+
+    <frontend>
+        <routers>
+            <Virtua_Product>
+                <use>standard</use>
+                <args>
+                    <module>Virtua_Product</module>
+                    <frontName>product</frontName>
+                </args>
+            </Virtua_Product>
+        </routers>
+        <layout>
+            <updates>
+                <virtua_product>
+                    <file>product.xml</file>
+                </virtua_product>
+            </updates>
+        </layout>
+    </frontend>
+
+    <crontab>
+        <jobs>
+            <virtua_product_availability>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>virtua_product/observer::checkAvailability</model>
+                </run>
+            </virtua_product_availability>
+        </jobs>
+    </crontab>
+
+</config>

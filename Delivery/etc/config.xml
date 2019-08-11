@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+        <config>
+    <modules>
+    <Virtua_Delivery>
+        <version>3.1.5.6</version>
+    </Virtua_Delivery>
+    </modules>
+
+    <global>
+        <blocks>
+            <virtua_delivery>
+                <class>Virtua_Delivery_Block</class>
+            </virtua_delivery>
+        </blocks>
+        <models>
+            <virtua_delivery>
+                <class>Virtua_Delivery_Model</class>
+            </virtua_delivery>
+        </models>
+        <helpers>
+            <virtua_delivery>
+                <class>Virtua_Delivery_Helper</class>
+            </virtua_delivery>
+        </helpers>
+
+        <resources>
+                <delivery_setup>
+            <setup>
+                <module>Virtua_Delivery</module>
+                <class>Mage_Eav_Model_Entity_Setup</class>
+            </setup>
+            </delivery_setup>
+            <connection>
+                <use>core_setup</use>
+            </connection>
+
+        </resources>
+    </global>
+
+    <frontend>
+        <routers>
+            <Virtua_Delivery>
+                <use>standard</use>
+                <args>
+                    <module>Virtua_Delivery</module>
+                    <frontName>delivery</frontName>
+                </args>
+            </Virtua_Delivery>
+        </routers>
+        <layout>
+            <updates>
+                <virtua_delivery>
+                    <file>delivery.xml</file>
+                </virtua_delivery>
+            </updates>
+        </layout>
+    </frontend>
+
+
+
+</config>

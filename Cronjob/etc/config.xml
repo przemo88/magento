@@ -1,0 +1,74 @@
+<config>
+    <modules>
+        <Virtua_Cronjob>
+            <version>3.1.5.6</version>
+        </Virtua_Cronjob>
+    </modules>
+
+    <global>
+        <models>
+            <virtua_cronjob>
+                <class>Virtua_Cronjob_Model</class>
+            </virtua_cronjob>
+        </models>
+    <blocks>
+        <virtua_cronjob>
+            <class>Virtua_Cronjob_Block</class>
+        </virtua_cronjob>
+    </blocks>
+        <helpers>
+            <virtua_cronjob>
+                <class>Virtua_Cronjob_Helper</class>
+            </virtua_cronjob>
+        </helpers>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <virtua_cronjob>
+                        <virtua_cronjob before="Mage_Adminthml">Virtua_Cronjob_Adminhtml_Cronjob</virtua_cronjob>
+                    </virtua_cronjob>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <virtua_cronjob>
+                    <file>cronjob.xml</file>
+                </virtua_cronjob>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <virtua_cronjob before="Mage_Adminhtml">Virtua_Cronjob_Adminhtml</virtua_cronjob>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <crontab>
+        <jobs>
+            <virtua_cronjonb>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>virtua_cronjob/observer::cron</model>
+                </run>
+            </virtua_cronjonb>
+        </jobs>
+    </crontab>
+
+</config>

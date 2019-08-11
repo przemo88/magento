@@ -1,0 +1,65 @@
+<config>
+    <modules>
+        <Virtua_Order>
+            <version>3.2.0.4</version>
+        </Virtua_Order>
+    </modules>
+
+    <global>
+
+        <helpers>
+            <virtua_order>
+                <class>Virtua_Order_Helper</class>
+            </virtua_order>
+        </helpers>
+
+        <sales>
+            <quote>
+                <totals>
+                    <virtua_order>
+                        <class>Virtua_Order_Model_Data</class>
+                        <after>discount</after>
+                        <before>tax</before>
+                    </virtua_order>
+                </totals>
+            </quote>
+        </sales>
+
+
+
+        <fieldsets>
+            <sales_convert_quote_address>
+                <basefee>
+                    <to_order>*</to_order>
+                </basefee>
+                <fee>
+                    <to_order>*</to_order>
+                </fee>
+            </sales_convert_quote_address>
+        </fieldsets>
+
+
+    </global>
+
+    <frontend>
+        <routers>
+            <Virtua_Order>
+                <use>standard</use>
+                <args>
+                    <module>Virtua_Order</module>
+                    <frontName>order</frontName>
+                </args>
+            </Virtua_Order>
+        </routers>
+
+        <layout>
+            <updates>
+                <Virtua_Order>
+                    <file>order.xml</file>
+                </Virtua_Order>
+            </updates>
+        </layout>
+
+    </frontend>
+
+</config>

@@ -1,0 +1,24 @@
+
+<config>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <virtua_delivery>
+                                        <title>Virtua - All</title>
+                                    </virtua_delivery>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+
+</config>

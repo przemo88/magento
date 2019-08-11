@@ -1,0 +1,25 @@
+<config>
+    <modules>
+        <Virtua_Update>
+            <version>3.1.5.6.</version>
+        </Virtua_Update>
+    </modules>
+    <frontend>
+        <routers>
+            <Virtua_Update>
+                <use>standard</use>
+                <args>
+                    <module>Virtua_Update</module>
+                    <frontName>update</frontName>
+                </args>
+            </Virtua_Update>
+        </routers>
+        <layout>
+            <updates>
+                <virtua_update>
+                    <file>update.xml</file>
+                </virtua_update>
+            </updates>
+        </layout>
+    </frontend>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+
+        <virtua_guestbook_report translate="title" module="virtua_guestbook">
+            <title>Guestbook</title>
+            <action>adminhtml/guest/index</action>
+            <sort_order>90</sort_order>
+        </virtua_guestbook_report>
+
+    </menu>
+</config>
